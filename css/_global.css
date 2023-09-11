@@ -1,0 +1,25 @@
+* {
+    margin:0;
+    padding:0; 
+    font-family: "Comic Sans MS";
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--white);
+
+
+}
+
+
+header {
+    background-color: var(--white);
+     height: 50px;
+
+}
+
+
+
+
+
+

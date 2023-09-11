@@ -1,0 +1,620 @@
+@import url(_variabels.css);
+@import url(_global.css);
+
+
+body {
+    margin: 0 auto;
+}
+
+
+
+ 
+a {text-decoration: none;}
+
+footer {
+    background-color: var(--white);
+    color:var(--dark);
+    display: flex;
+    justify-content: space-between;
+     height:200px;
+     align-items: center;
+}
+
+ul { list-style: none;
+    padding: 10px;
+}
+
+#menuToggle
+{
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: var(--dark);
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: var(--red);
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: var(--dark);
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 150px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 100px;
+  
+  background:var(--white);
+  /* list-style-type: none; */
+  /* -webkit-font-smoothing: antialiased; */
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+
+
+
+
+
+ /* .top-img {
+    width: 100%;
+    height: calc(var(200px) + (var(400px) - var(200px)) * ((100vw - 320px) / (1920 - 320)));
+     height: clamp(200px, 30vh, 400px); 
+    height: 50%;
+    background-image: url("/images/SemesterProject1/SemesterProject1/images/learn-2405206_1920.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}  */
+
+
+
+ /* ==================================================================== 
+ Index Page 
+ ==================================================================== */
+
+
+ .img-h1 {
+  
+    /* background-color: white; */
+    font-size: 100px;
+    position: absolute;
+    top: 400px;
+    padding:20px;
+    background-color:black;
+
+
+}
+
+.info-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.museum-info, .opening, .exhibits-info {
+    width: 360px;
+    /* height: 250px; */
+ 
+}
+.museum-info p{
+padding:20px 0;
+}
+
+
+
+
+
+.header-img {
+    width: 100%;
+    max-height: 500px;
+
+ 
+}
+
+/* .header-img-div{
+    width: 100%;
+    max-height: 500px;
+} */
+
+/* .header-img-div {
+    width: 100%; 
+    height: 200px; 
+  } */
+  
+  /* .header-img-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: relative;
+  } */
+
+/* .header-img-div h1{
+    position: absolute;
+    top:185px;
+    left: 20px;
+    font-size: 50px;
+    padding: 5px;
+    background-color:var(--bg-color);
+    border-radius: 20px;
+    
+
+} */
+
+.header-img-div{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x:center ;
+    background-position-y:center ;
+    height:200px;
+    display: flex;
+    align-items: flex-end;
+    padding:0px 0px 20px 20px;
+}
+
+.home {
+    background-image: url(/images/SemesterProject1/SemesterProject1/images/learn-2405206_1920.jpg);
+
+}
+
+
+
+.exhibits {
+    background-image: url(/images/SemesterProject1/SemesterProject1/images/william-bout-264826.jpg);
+}
+
+
+
+.header-img-div h1{
+    padding: 5px;
+    background-color:var(--bg-color);
+
+}
+
+.opening {
+    background-color:var(--white);
+    color: var(--dark);
+    text-align: center;
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center; 
+    
+    
+    
+    
+    
+
+}
+
+.opening span {display: block;}
+
+.center {
+    /* width: 100%; */
+    display: flex;
+ 
+     flex-direction: column;
+     align-items: center;
+     padding-top:30px;
+     padding-bottom: 30px;
+}
+
+.contentgrid, .ticketgrid {
+    width: 360px;
+    max-width: 100%;
+    display: grid;
+    gap: 25px;
+    color: var(--dark);
+   
+
+
+
+}
+
+.ticketgrid{
+    color: var(--white);
+    
+    
+}
+
+.pricediv {
+    border-bottom: 1px solid var(--white);
+    height: 200px;
+    padding:5px;
+}
+
+.pricediv span{
+    display: block;
+}
+
+.kg-price {
+    border-bottom: none;
+}
+
+
+.cont-1, .cont-2, .cont-3, .cont-4, .cont-5, .cont-6 {
+    display: flex;
+    flex-direction: column;
+    object-fit:fill ;
+   
+ 
+    background-color: var(--white);
+    height: 400px;
+
+    
+}
+
+
+.contentgrid img{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+
+.cont-text {
+    display: flex;
+justify-content: space-between;
+align-items: center;
+height: 20%;
+padding-left:10px;
+padding-right: 10px;}
+
+
+.cont-text a, .events-text a {
+    background-color: var(--red);
+    color: var(--white);
+    padding:10px;
+    border-radius: 5px;
+
+}
+
+ /* ==================================================================== 
+Tickets page
+ ==================================================================== */
+
+
+ .tickets{
+    background-image: url(/images/SemesterProject1/SemesterProject1/images/scott-webb-102825.jpg);
+}
+
+ .buy-button {
+    padding:20px 100px 20px 100px;
+    background-color: var(--red);
+    color: var(--white);
+    font-size: 30px;
+    border-radius: 20px;
+    margin: 50px;
+ 
+
+ }
+
+ /* ==================================================================== 
+Exhibits
+ ==================================================================== */
+
+ .exhibits-info { 
+    margin: 50px; }
+
+
+ .exhi-events, .events-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+ }
+
+ .exhi-events {
+    padding: 20px 0px 20px 0px;
+    border: solid 1px var(--white);
+    border-left: none;
+    border-right: none;
+    gap: 15px;
+    
+ }
+
+ .exhi-events img {
+    width: 300px;
+ }
+.events-text {
+    align-items: center;
+    /* justify-content: flex-start; */
+    width: 300px;
+}
+
+ .events-text a {
+  
+  
+  
+
+}
+
+
+/* ==================================================================== 
+meadia medium screen
+ ==================================================================== */
+
+
+
+@media (min-width: 650px) {
+    .contentgrid, .ticketgrid {
+        width: auto;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(3,1fr);
+    }
+    .ticketgrid {
+        gap:0px;
+    }
+    .header-img-div{
+ 
+        height:350px;
+        padding:0px 0px 30px 30px;
+    }
+
+
+
+
+    .museum-info, .opening {
+        width: 625px;
+        /* height: 10em; */
+        font-size: 1.3em;
+        max-width: 100%;
+     
+    }
+    .cont-5 {
+        grid-column: 1/3;
+   
+    
+       
+        
+    }
+
+    .cont-6{
+        grid-column: 1/3;
+    }
+    
+.pricediv {
+    border-right:1px solid var(--white) ;
+}
+.kg-price, .g-price{
+    border-right: none;
+
+}
+
+.s-price, .kg-price{
+    border-bottom: none;
+}
+
+
+.exhi-events {
+ 
+    flex-direction: row;
+
+ }
+.ex-even {
+    flex-direction: row-reverse;
+}
+
+
+}
+
+
+
+
+/* ==================================================================== 
+meadia Large screen
+ ==================================================================== */
+
+@media (min-width: 1200px) {
+
+
+    .header-img {
+        width: 100%;
+    
+    }
+    .header-img-div {
+
+        height: 400px; 
+      }
+
+      /* .header-img-div h1{
+
+        top:480px;
+      } */
+ 
+
+    .info-div {
+
+      
+        flex-direction: row;
+        
+     
+    }
+
+    .museum-info, .opening {
+        width: 475px;
+        height: 400px;
+        /* font-size: 24px; */
+     
+    }
+
+
+     .contentgrid { 
+        width: auto; 
+         grid-template-columns: repeat(3,300px);
+        grid-template-rows: repeat(3,1fr); 
+  
+     
+
+      
+
+    
+    
+     } 
+
+    .ticketgrid {
+        grid-template-columns: repeat(4,240px);
+
+    }
+    .buy-button {
+        align-self: flex-start;
+       
+
+     
+    
+     }
+
+    .pricediv {
+       
+        border-bottom:none;
+        border-right: 1px solid var(--white);
+    }
+
+    .kg-price {
+        border-right:none ;
+    
+    }
+
+
+    .cont-5 {
+        grid-column: 2/4;
+   
+    
+       
+        
+    }
+
+    .cont-6{
+        grid-column: 1/4;
+    }
+    .exhi-events img, .events-text {
+        width: 500px;
+    }
+}
+
+
+
+
+    
+
+
+

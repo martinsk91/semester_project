@@ -9,15 +9,27 @@ body {
 
 
  
-a {text-decoration: none;}
+a {text-decoration: none;
+display: inline;}
 
 footer {
     background-color: var(--white);
     color:var(--dark);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
      height:200px;
      align-items: center;
+     /* text-align: center; */
+}
+
+.follow {
+    text-align: center;
+}
+
+footer img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
 }
 
 ul { list-style: none;
@@ -62,15 +74,13 @@ ul { list-style: none;
   
   cursor: pointer;
   
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  opacity: 0;
+  z-index: 2; 
   
   -webkit-touch-callout: none;
 }
 
-/*
- * Just a quick hamburger
- */
+
 #menuToggle span
 {
   display: block;
@@ -101,10 +111,7 @@ ul { list-style: none;
   transform-origin: 0% 100%;
 }
 
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+
 #menuToggle input:checked ~ span
 {
   opacity: 1;
@@ -112,27 +119,20 @@ ul { list-style: none;
   background: #232323;
 }
 
-/*
- * But let's hide the middle one.
- */
+
 #menuToggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
+
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
+
 #menu
 {
   position: absolute;
@@ -140,12 +140,7 @@ ul { list-style: none;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 100px;
-  
-  background:var(--white);
-  /* list-style-type: none; */
-  /* -webkit-font-smoothing: antialiased; */
-  /* to stop flickering of text in safari */
-  
+    background:var(--white);
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   
@@ -158,9 +153,7 @@ ul { list-style: none;
   font-size: 22px;
 }
 
-/*
- * And let's slide it in from the left
- */
+
 #menuToggle input:checked ~ ul
 {
   transform: none;
@@ -449,14 +442,7 @@ Exhibits
     width: 300px;
 }
 
- /* .events-text-button {
-    display: flex;
-    justify-content: center;
-  
-  
-  
 
-} */
 
 
 /* ==================================================================== 

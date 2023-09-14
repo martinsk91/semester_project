@@ -170,6 +170,7 @@ header img{
 
 .museum-info, .opening, .exhibits-info, .exhibits-info img {
     width: 360px;
+    max-width: 80%;
 
  
 }
@@ -556,7 +557,7 @@ meadia Large screen
         grid-template-columns: repeat(4,240px);
 
     }
-    .buy-button {
+    .buy-button, .tickets-text {
         align-self: flex-start;
        
 

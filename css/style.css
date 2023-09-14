@@ -12,6 +12,13 @@ body {
 a {text-decoration: none;
 display: inline;}
 
+header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
 footer {
     background-color: var(--white);
     color:var(--dark);
@@ -36,146 +43,104 @@ ul { list-style: none;
     padding: 10px;
 }
 
-#menuToggle
-{
-  display: block;
-  position: absolute;
-  top: 10px;
-  left: 10px;
+header img{
+    width: 50px;
+    height: auto;
+    z-index: 1000;
+    cursor: pointer;
+}
+.menu-toggle {
+    /* display: block; */
+    position: absolute;
+    top: 5px;
+    left: 60px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
   
-  z-index: 1;
+  .menu-toggle a {
+    text-decoration: none;
+    color: var(--dark);
+    transition: color 0.3s ease;
+  }
   
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#menuToggle a
-{
-  text-decoration: none;
-  color: var(--dark);
+  .menu-toggle a:hover {
+    color: var(--red);
+  }
   
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover
-{
-  color: var(--red);
-}
-
-
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
+  .menu-toggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+  }
   
-  cursor: pointer;
+  .menu-toggle span {
+    display: block;
+    width: 40px;
+    height: 7px;
+    margin-bottom: 7px;
+    position: relative;
+    background: var(--dark);
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.6s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+      background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+      opacity 0.55s ease;
+  }
   
-  opacity: 0;
-  z-index: 2; 
+  .menu-toggle span:first-child {
+    transform-origin: 0% 0%;
+  }
   
-  -webkit-touch-callout: none;
-}
-
-
-#menuToggle span
-{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
+  .menu-toggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
   
-  background: var(--dark);
-  border-radius: 3px;
+  .menu-toggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(1px, 3px);
+    background: var(--dark);
+  }
   
-  z-index: 1;
+  .menu-toggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
   
-  transform-origin: 4px 0px;
+  .menu-toggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
   
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-}
-
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
-
-
-#menuToggle input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-
-#menu
-{
-  position: absolute;
-  width: 150px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 100px;
-    background:var(--white);
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+  .menu {
+    position: absolute;
+    width: 150px;
+    margin: -100px 0 0 -60px;
+    padding: 50px;
+    padding-top: 100px;
+    background: var(--white);
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  }
   
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-
-#menu li
-{
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-
-#menuToggle input:checked ~ ul
-{
-  transform: none;
-}
-
-
-
-
-
-
-
-
- /* .top-img {
-    width: 100%;
-    height: calc(var(200px) + (var(400px) - var(200px)) * ((100vw - 320px) / (1920 - 320)));
-     height: clamp(200px, 30vh, 400px); 
-    height: 50%;
-    background-image: url("/images/SemesterProject1/SemesterProject1/images/learn-2405206_1920.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-}  */
-
+  .menu li {
+    padding: 10px 0;
+    font-size: 22px;
+    list-style: none;
+  }
+  
+  .menu-toggle input:checked ~ ul {
+    transform: none;
+  }
 
 
  /* ==================================================================== 
@@ -185,7 +150,7 @@ ul { list-style: none;
 
  .img-h1 {
   
-    /* background-color: white; */
+
     font-size: 100px;
     position: absolute;
     top: 400px;
@@ -203,9 +168,9 @@ ul { list-style: none;
     width: 100%;
 }
 
-.museum-info, .opening, .exhibits-info {
+.museum-info, .opening, .exhibits-info, .exhibits-info img {
     width: 360px;
-    /* height: 250px; */
+
  
 }
 .museum-info p{
@@ -223,34 +188,6 @@ padding:20px 0;
  
 }
 
-/* .header-img-div{
-    width: 100%;
-    max-height: 500px;
-} */
-
-/* .header-img-div {
-    width: 100%; 
-    height: 200px; 
-  } */
-  
-  /* .header-img-div img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    position: relative;
-  } */
-
-/* .header-img-div h1{
-    position: absolute;
-    top:185px;
-    left: 20px;
-    font-size: 50px;
-    padding: 5px;
-    background-color:var(--bg-color);
-    border-radius: 20px;
-    
-
-} */
 
 .header-img-div{
     background-repeat: no-repeat;
@@ -277,6 +214,11 @@ padding:20px 0;
 
 .events {
     background-image: url(/images/lab-512503_1920.jpg);
+
+}
+
+.information {
+    background-image: url(/images/library-1132573_1920.jpg);
 
 }
 
@@ -335,7 +277,7 @@ padding:20px 0;
 
 .pricediv {
     border-bottom: 1px solid var(--white);
-    height: 200px;
+    /* height: 200px; */
     padding:5px;
 }
 
@@ -398,7 +340,7 @@ Tickets page
     padding:20px 100px 20px 100px;
     background-color: var(--red);
     color: var(--white);
-    font-size: 30px;
+    font-size: 20px;
     border-radius: 20px;
     margin: 50px;
  
@@ -440,6 +382,7 @@ Exhibits
   flex-direction: column;
   
     width: 300px;
+    gap: 50px;
 }
 
 
@@ -476,6 +419,12 @@ meadia medium screen
         max-width: 100%;
      
     }
+.center {
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+}
+
     .cont-5 {
         grid-column: 1/3;
    
@@ -521,6 +470,37 @@ meadia Large screen
  ==================================================================== */
 
 @media (min-width: 1200px) {
+    header {
+        justify-content: space-between;
+      }
+  
+      .menu-toggle ul {
+        transform: none;
+      }
+    
+  .menu-toggle {
+    position: relative;
+    top:0;
+    left:0;
+  }
+      
+      .menu-toggle span {
+        display: none; /* Display the menu icon as inline-block */
+  
+      }
+      
+      .menu {
+        position: relative; /* Reset the position to relative */
+        width: auto; /* Allow the menu to take its natural width */
+        margin: 0; /* Remove margin */
+        padding: 0; /* Remove padding */
+        transform: none; /* Reset the transformation */
+      }
+      
+      .menu li {
+        display: inline-block; /* Display menu items inline */
+        padding: 0 10px; /* Add spacing between menu items */
+      }
 
 
     .header-img {
@@ -529,8 +509,12 @@ meadia Large screen
     }
     .header-img-div {
 
-        height: 400px; 
+        height: 450px; 
       }
+
+      /* .information{
+        background-position: bottom -600px right 0;
+      } */
 
       /* .header-img-div h1{
 
@@ -566,6 +550,7 @@ meadia Large screen
     
     
      } 
+
 
     .ticketgrid {
         grid-template-columns: repeat(4,240px);

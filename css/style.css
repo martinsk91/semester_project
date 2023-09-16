@@ -9,6 +9,8 @@ body {
 a {text-decoration: none;
 display: inline;}
 
+
+
 header {
     display: flex;
     align-items: center;
@@ -29,6 +31,8 @@ footer {
 .follow, .list {
     text-align: center;
 }
+
+
 
 footer img, .museum-info img {
     width: 50px;
@@ -210,8 +214,11 @@ padding:20px 0;
    justify-content: center; 
     }
 .white-box {
+    /* display: grid; */
      background-color:var(--white);
     color: var(--dark);
+    /* gap:15px; */
+
 }
 .opening span {display: block;}
 .center {
@@ -331,24 +338,72 @@ Information
 
 
         display: grid;
-        grid-template-columns:50px 50px auto 100px;
-        grid-template-rows: 50px auto;
+        grid-template-columns: 50px auto;
+        padding:10px;
+   
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; */
         
 
   
 }
-.contact-info p{
-    justify-self: center; }
+.contact-text {
+    display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+}
+/* .contact-info p{
+    justify-self: center; } */
 
+
+    /* .list {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    } */
 
 .contact-info div {
-grid-row: 2/3;
-grid-column: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+   
+
+
+grid-column: 2;
+}
+
+.contact-info div p{
+    margin:0;
+    padding:0;
+
 }
 
 .contact-info img{
-    grid-column: 2/3;
+    grid-column: 1;
 
+}
+
+.map, .location-info {
+    width: 360px;
+    /* height: auto; */
+}
+
+.location-info   {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding-top:150px ;
+}
+
+.location-info div {
+    justify-self: flex-start;
+    align-self: flex-start;
 }
 
 /* ==================================================================== 
@@ -411,6 +466,10 @@ meadia medium screen
     flex-direction: row-reverse;
 }
 
+
+.map, .location-info {
+    width: 500px;
+}
 
 }
 
@@ -481,7 +540,7 @@ meadia Large screen
     .museum-info, .opening {
         width: 475px;
         height: 400px;
-        /* font-size: 24px; */
+       justify-content: flex-start;
      
     }
 

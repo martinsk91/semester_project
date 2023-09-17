@@ -13,14 +13,21 @@ display: inline;}
 
 
 /* everything with dark text and white background */
-footer, .cont-1, .cont-2, .cont-3, .cont-4, .cont-5, .cont-6, .white-box, .menu-toggle a { 
+footer, .cont-1, .cont-2, .cont-3, .cont-4, .cont-5, .cont-6, .white-box, .menu-toggle a, .about-grid-item-1 { 
     background-color: var(--white);
     color: var(--dark);
 }
+/* everything with white text  */ 
+.buy-button, .ticketgrid {
+    color: var(--white);
+}
+
+
+
 /* here is all flexboxes */
 header, footer, .info-div, .header-img-div, .opening, .center,
  .cont-1, .cont-2, .cont-3, .cont-4, .cont-5, .cont-6, .cont-text, 
- .exhi-events, .events-text, .contact-text, .contact-info div, .location-info {
+ .exhi-events, .events-text, .contact-text, .contact-info div, .location-info, .form-group {
     display: flex;
 }
 
@@ -33,7 +40,7 @@ header, footer, .info-div, .header-img-div, .opening, .center,
 
 /* all items with the align-items:center value */
 header, footer, .info-div, .opening, .center, .cont-text, .exhibits-info, .contact-text,
- .contact-info div, .location-info, .events-text {
+ .contact-info div, .location-info, .events-text, .form-group {
     align-items: center;
 
 }
@@ -43,20 +50,20 @@ header, footer, .info-div, .opening, .center, .cont-text, .exhibits-info, .conta
 }
 
 /* all justify-content: center;  */
-.info-div, .opening, .exhi-events, .events-text, .contact-text, .contact-info div   {
+.info-div, .opening, .exhi-events, .events-text, .contact-text, .contact-info div {
     justify-content: center;
 }
 
 /* all flex-direction: column; */
 .info-div, .opening, .center, .exhi-events, .events-text, .cont-1,
  .cont-2, .cont-3, .cont-4, .cont-5, .cont-6, .events-text,
-  .contact-text, .contact-info div, .location-info  {
+  .contact-text, .contact-info div, .location-info, .form-group  {
     flex-direction: column;
 
 }
 
 /* all grids  */ 
-.contentgrid, .ticketgrid, .contact-info{
+.contentgrid, .ticketgrid, .contact-info, .about-grid{
     display: grid;
 }
 
@@ -70,40 +77,36 @@ header and footer
  ==================================================================== */
 
  header {
-    /* display: flex; */
-    /* align-items: center; */
+
     position: fixed;
     width: 100%;
 }
 
 footer {
-    /* background-color: var(--white); */
-    /* color:var(--dark); */
-    /* display: flex; */
+
     justify-content: space-around;
      height:200px;
-     /* align-items: center; */
-     /* text-align: center; */
+
 }
 
 /* logos */
 footer img, .museum-info img, header img {
     width: 50px;
-    /* height: auto; */
+
     cursor: pointer;
 }
 ul { list-style: none;
     padding: 10px;
 }
-header img{
-    /* width: 50px; */
-    /* height: auto; */
+header a{
+
+
     z-index: 2;
-    /* cursor: pointer; */
+
 }
 
 
-/* background images */
+
 
 .header-img-div{
     background-repeat: no-repeat;
@@ -111,12 +114,16 @@ header img{
     background-position-x:center ;
     background-position-y:center ;
     height:200px;
-    /* display: flex; */
+
     align-items: flex-end;
     padding:0px 0px 20px 20px;
 }
+.header-img-div h1{
+    font-size: 1.5em;
+}
+
 .home {
-    background-image: url(/images/learn-2405206_1920.jpg);
+    background-image: url(/images/learn.jpg);
 }
 .exhibits {
     background-image: url(/images/william-bout-264826.jpg);
@@ -128,11 +135,14 @@ header img{
     background-image: url(/images/library-1132573_1920.jpg);
 
 }
+
+
 .header-img-div h1{
     padding: 5px;
     background-color:var(--bg-color);
 
 }
+
 
 
 /* ==================================================================== 
@@ -143,40 +153,34 @@ the navigation bar
 i have made some minor changes to it to make it fit in to my project */
 
 .menu-toggle {
-    /* display: block; */
-    /* position: absolute; */
+
     top: 5px;
     left: 60px;
     z-index: 1;
-    /* -webkit-user-select: none;
-    user-select: none; */
+
   }
   
-  .menu-toggle a {
-    /* text-decoration: none; */
-    /* color: var(--dark); */
-    /* transition: color 0.3s ease; */
-  }
+
   
   .menu-toggle a:hover {
     color: var(--red);
   }
   
   .menu-toggle input {
-    /* display: block; */
+
     width: 40px;
     height: 32px;
-    /* position: absolute; */
+
     top: -7px;
     left: -5px;
     cursor: pointer;
     opacity: 0;
     z-index: 2;
-    /* -webkit-touch-callout: none; */
+ 
   }
   
   .menu-toggle span {
-    /* display: block; */
+ 
     width: 40px;
     height: 7px;
     margin-bottom: 7px;
@@ -201,7 +205,7 @@ i have made some minor changes to it to make it fit in to my project */
   .menu-toggle input:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(1px, 3px);
-    /* background: var(--dark); */
+  
   }
   
   .menu-toggle input:checked ~ span:nth-last-child(3) {
@@ -214,7 +218,7 @@ i have made some minor changes to it to make it fit in to my project */
   }
   
   .menu {
-    /* position: absolute; */
+
     width: 150px;
     margin: -100px 0 0 -60px;
     padding: 50px;
@@ -238,71 +242,36 @@ i have made some minor changes to it to make it fit in to my project */
  ==================================================================== */
 
 
- /* .img-h1 {
-    font-size: 100px;
-    position: absolute;
-    top: 400px;
-    padding:20px;
-    background-color:black;
-} */
+
 .info-div {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* flex-direction: column; */
-    /* align-items: center; */
+
     width: 100%;
 }
 
-.museum-info, .opening, .exhibits-info, .exhibits-info img, .contentgrid, .ticketgrid {
+.museum-info, .opening, .exhibits-info, .exhibits-info img, .contentgrid, .ticketgrid, .about-grid{
     width: 360px;
     max-width: 80%;
-    /* max-width: 100%; */
+
 
  
 }
 .museum-info p{
 padding:20px 0;
 }
-/* .header-img {
-    width: 100%;
-    max-height: 500px;
-} */
 
-.opening {
-    /* background-color:var(--white); */
-    /* color: var(--dark); */
-    /* text-align: center; */
-    /* display: flex; */
-   /* flex-direction: column; */
-   /* align-items: center; */
-   /* justify-content: center;  */
-    }
-/* .white-box { */
-    /* display: grid; */
-     /* background-color:var(--white); */
-    /* color: var(--dark); */
-    /* gap:15px; */
 
-/* } */
-.opening span {
-    /* display: block; */
-}
+
+
+
 .center {
-    /* width: 100%; */
-    /* display: flex; */
- 
-     /* flex-direction: column; */
-     /* align-items: center; */
+
      padding-top:30px;
      padding-bottom: 30px;
 }
-.contentgrid, .ticketgrid {
-    /* width: 360px; */
-    /* max-width: 100%; */
+.contentgrid, .ticketgrid, .about-grid {
 
-    /* display: grid; */
     gap: 25px;
-    /* color: var(--dark); */
+
    }
 
 .pricediv {
@@ -310,27 +279,23 @@ padding:20px 0;
     /* height: 200px; */
     padding:5px;
 }
-.pricediv span{
-    /* display: block; */
-}
+
 .kg-price {
     border-bottom: none;
 }
-.cont-1, .cont-2, .cont-3, .cont-4, .cont-5, .cont-6 {
-    /* display: flex; */
-    /* flex-direction: column; */
-    object-fit:cover ;
-   
- 
-    /* background-color: var(--white); */
-    height: 400px;
+.cont-1, .cont-2, .cont-3, .cont-4, .cont-5, .cont-6, .contentgrid img {
 
-    
+    object-fit:cover ;
+   }
+
+.cont-1, .cont-2, .cont-3, .cont-4, .cont-5, .cont-6 {
+    height: 400px;
 }
+
 .contentgrid img{
     width: 100%;
     height: 80%;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 .cont-text {
     /* display: flex; */
@@ -339,7 +304,7 @@ justify-content: space-between;
 height: 20%;
 padding-left:10px;
 padding-right: 10px;}
-.cont-text a, .events-text a, .about-butt {
+.cont-text a, .events-text a, .about-butt, button {
     background-color: var(--red);
     color: var(--white);
     padding:10px;
@@ -355,15 +320,12 @@ Tickets page
 .buy-button {
     padding:20px 100px 20px 100px;
     background-color: var(--red);
-    color: var(--white);
+    /* color: var(--white); */
     font-size: 20px;
     border-radius: 20px;
     margin: 50px;
  }
 
- .ticketgrid{
-    color: var(--white);
-    }
 
  /* ==================================================================== 
 Exhibits
@@ -372,12 +334,7 @@ Exhibits
  .exhibits-info { 
     margin: 50px; }
 
-    .exhi-events, .events-text  {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* flex-direction: column; */
-    /* align-items: center; */
- }
+
 
  .exhi-events{
     padding: 20px 0px 20px 0px;
@@ -392,12 +349,10 @@ Exhibits
     width: 300px;
  }
 .events-text {
-    /* display: flex; */
-    /* align-items: start; */
-    justify-content:center;
-  /* flex-direction: column; */
-  
-    /* width: 300px; */
+
+
+
+
     gap: 50px;
 }
 /* ==================================================================== 
@@ -406,44 +361,12 @@ Information
 .contact-info {
 
 
-        /* display: grid; */
+
         grid-template-columns: 50px auto;
         padding:10px;
-   
-        /* display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row; */
-        
-
-  
-}
-.contact-text {
-    /* display: flex; */
- /* justify-content: center; */
- /* flex-direction: column; */
- /* align-items: center; */
-}
-/* .contact-info p{
-    justify-self: center; } */
-
-
-    /* .list {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-    } */
-
-.contact-info div {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
-
-   
-
-
-grid-column: 2;
+    }
+    .contact-info div {
+    grid-column: 2;
 }
 
 .contact-info div p{
@@ -454,22 +377,18 @@ grid-column: 2;
 
 .contact-info img{
     grid-column: 1;
-
 }
 
 .map, .location-info {
     width: 360px;
-    /* height: auto; */
+
 }
 .map {
     padding-bottom: 100px;
 }
 
 .location-info   {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
+
     padding-top:150px ;
 }
 
@@ -477,18 +396,33 @@ grid-column: 2;
     justify-self: flex-start;
     align-self: flex-start;
 }
+
+
+/* ==================================================================== 
+about page
+ ==================================================================== */
+.about-image-container img {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.about-grid-item-1 {
+    grid-row:1;
+}
+
+
+
+
+
 /* ==================================================================== 
 checkout page
  ==================================================================== */
 
-.form-container {
-    /* text-align: center; */
-}
+
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
     margin-bottom: 20px;
 }
 
@@ -504,26 +438,27 @@ checkout page
 }
 
 button {
-    background-color: var(--red);
-    color: var(--white);
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 
-
-
+/* ==================================================================== 
+sucess page
+ ==================================================================== */
+.checkmark {
+    width: 150px;}
 
 /* ==================================================================== 
 meadia medium screen
  ==================================================================== */
 @media (min-width: 650px) {
-    .contentgrid, .ticketgrid {
+    .contentgrid, .ticketgrid, .about-grid {
         width: auto;
+        max-width: 100%;
         grid-template-columns: repeat(2, 300px);
-        grid-template-rows: repeat(3,1fr);
+        /* grid-template-rows: repeat(3,1fr); */
     }
     .ticketgrid {
         gap:0px;
@@ -534,15 +469,19 @@ meadia medium screen
         padding:0px 0px 30px 30px;
     }
 
-.museum-info, .opening, .exhibits-info {
+    .header-img-div h1{
+        font-size: 2em;
+    }
+
+.museum-info, .opening, .exhibits-info, .location-info {
         width: 625px;
-        /* height: 10em; */
+
         font-size: 1.3em;
         max-width: 100%;
      
     }
 .center {
-    /* flex-direction: row; */
+ 
     align-items: center;
     justify-content: center;
 }
@@ -579,6 +518,20 @@ meadia medium screen
     width: 500px;
 }
 
+.about-grid-item-1 {
+    grid-column:2;
+    grid-row:1;
+}
+.about-image-container {
+    grid-column: 1;
+    grid-row:1;
+}
+
+.about-grid-item-2 {
+grid-column:1/3;
+grid-row:2;
+}
+
 }
 
 /* ==================================================================== 
@@ -589,6 +542,10 @@ meadia Large screen
     header {
         justify-content: space-between;
       }
+
+      .header-img-div h1{
+        font-size: 3em;
+    }
   
       .menu-toggle ul {
         transform: none;
@@ -627,14 +584,7 @@ meadia Large screen
         height: 450px; 
       }
 
-      /* .information{
-        background-position: bottom -600px right 0;
-      } */
-
-      /* .header-img-div h1{
-
-        top:480px;
-      } */
+  
  
 
     .info-div {
@@ -656,7 +606,7 @@ meadia Large screen
      .contentgrid { 
         width: auto; 
          grid-template-columns: repeat(3,300px);
-        /* grid-template-rows: repeat(3,1fr);  */
+     
      } 
     .ticketgrid {
         grid-template-columns: repeat(4,240px);
@@ -692,6 +642,11 @@ meadia Large screen
     .exhi-events img, .events-text {
         width: 500px;
     }
+
+    .about-grid {
+
+    }
+
 }
 
 
